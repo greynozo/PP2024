@@ -7,11 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace PP2024
+namespace Prueba
 {
 
 
-    public partial class Principal
+    public partial class PaginaMaestra
     {
 
         /// <summary>

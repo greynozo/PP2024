@@ -33,8 +33,52 @@
         </nav>
 
         <h2 class="mb-4">Default</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      
+        
+        <table>
+            <tr>
+                <td>
+                    <asp:Label Text="Nombre" ID="lblNombre" runat="server" />
+                </td>
+                <td>
+                    <asp:TextBox CssClass="form-control" ID="txtNombre" runat="server" placeholder="Ingrese Nombre" />
+                    
+                    <%--<input type="text" class="form-control" name="Nombre" value="" required/>--%>
+                </td>
+                <td>
+                    <asp:RequiredFieldValidator ID="rfvNombre" ControlToValidate="txtNombre" runat="server" ErrorMessage="Debe ingresar nombre" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label Text="Apellido" ID="lblApellido" runat="server" />
+                </td>
+                <td>
+                    <asp:TextBox CssClass="form-control" ID="txtApellido" runat="server" />
+                </td>
+                 <td>
+                    <asp:RequiredFieldValidator ID="rfvApellido" ControlToValidate="txtApellido" runat="server" ErrorMessage="Debe ingresar apellido" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label Text="Edad" ID="lblEdad" runat="server" />
+                </td>
+                <td>
+                    <asp:TextBox CssClass="form-control" ID="txtEdad" runat="server" />
+                </td>
+                <td>
+                    <asp:RangeValidator ID="rvEdad" MinimumValue="18" MaximumValue="100" Type="Integer" ControlToValidate="txtEdad" runat="server" ErrorMessage="Debe ser mayor de 18" Text="*" ForeColor="Red"></asp:RangeValidator>
+                    <asp:RequiredFieldValidator ErrorMessage="Debe ingresar edad" ID="rfvEdad" ControlToValidate="txtEdad" runat="server" Text="*" ForeColor="Red"/>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <asp:Label ID="lblTexto" Font-Bold="true" ForeColor="Red" Text="" runat="server" />
+                </td>
+            </tr>
+        </table>
+        <br />
+        <asp:Button Text="Guardar" CssClass="btn btn-success" ID="btnGuardar" runat="server" OnClick="btnGuardar_Click" />
+        <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" />
 	   </div>
 </asp:Content>

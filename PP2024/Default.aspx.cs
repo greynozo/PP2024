@@ -13,5 +13,19 @@ namespace PP2024
         {
 
         }
+
+        protected void btnGuardar_Click(object sender, EventArgs e)
+        {
+            //if (txtNombre.Text == "")
+            //if (txtNombre.Text == String.Empty)
+            if (!String.IsNullOrEmpty(txtNombre.Text) && !String.IsNullOrEmpty(txtApellido.Text))
+            {
+                lblTexto.Text = "Se ha generado el usuario para " + txtNombre.Text + " " + txtApellido.Text;
+            }
+            else
+            {
+                lblTexto.Text = "Todos los campos son obligatorios";
+            }
+        }
     }
 }
